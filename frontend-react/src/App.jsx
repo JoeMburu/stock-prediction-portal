@@ -1,11 +1,19 @@
 // import { React, useState } from 'react'
+import './assets/css/styles.css';
+import Header from './components/header';
+import Main from './components/main';
+import Footer from './components/footer';
+
+
 
 function App() {
   
 
   return (
     <>
-      <h1>Stock Prediction Portal</h1>
+      <Header />
+      <Main />
+      <Footer  />  
     </>
   )
 }
