@@ -1,7 +1,9 @@
-import React from 'react'
+import {React, useContext} from 'react'
 import Button from './Button'
+import { AuthContext } from './AuthProvider'
 
 const Main = () => {
+  const { isLoggedIn } = useContext(AuthContext);
   return (
     <>
       <div className='container'>
@@ -10,8 +12,8 @@ const Main = () => {
           <p className='text-light lead'>This stock prediction application utilizes machine learning techniques, 
             specifically employing Keras,and LSTM model, integrated within Django framework. It forecasts 
             future stock prices by analyzing 100-day and 200-day moving averages, essential indicators 
-            widely used by stock analysts to inform trading and investment decisions.</p>        
-         <Button class='btn-outline-info' text='Login' />
+            widely used by stock analysts to inform trading and investment decisions.</p>  
+          {isLoggedIn ? (<Button class='btn-outline-info' text='Explore More' url='/dashboard' />) : (<Button class='btn-outline-info' text='Login' url='/login' />)}
         </div>
       </div>
     
